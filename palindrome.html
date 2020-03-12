@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <tr>
+                        <td>Enter a number</td>
+                        <td><input type="text" class="form-control" id="num"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button class="btn btn-secondary" onclick="palindrome();">PALINDROME</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><p id="result"></p></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        function palindrome()
+        {
+            var x=parseInt(document.getElementById("num").value);
+            var y=x;
+            var rev=0;
+            var rem=0;
+            while(x>0)
+            {
+                rem=x%10;
+                rev=rev*10+rem;
+                x=parseInt(x/10);
+            }
+            if(y==rev)
+            {
+                document.getElementById("result").innerHTML="Yes it is a palindrome";
+            }
+            else
+            {
+                document.getElementById("result").innerHTML="Not a palindrome";
+            }
+        }
+    </script>
+</body>
+</html>
